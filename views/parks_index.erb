@@ -1,0 +1,5 @@
+<p><a href="/park/new">Add a new park!</a></p>
+
+<%@parks.each do |p|  %>
+<p><a href="/park/<%= p.id %>"><%= p.name %></a></p>
+<%end%>

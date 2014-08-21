@@ -1,0 +1,10 @@
+<p><a href="/story/new">Add a new story!</a></p>
+
+
+<%@stories.each do |s|  %>
+<p><a href="/story/<%= s.id %>"><%= s.story %></a>
+<p><%= s.park.name %></p>	
+
+<%end%>
+
+
