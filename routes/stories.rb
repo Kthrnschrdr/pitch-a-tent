@@ -14,7 +14,6 @@ end
 post "/person/:id/story/create" do
   @person = Person.find(params[:id])
   @story = Story.create({story: params["story"], park_id: params["park_id"], person_id: params[:id]})
-  binding.pry
   erb :"stories/story_create"
 end
 
