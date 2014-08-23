@@ -1,0 +1,12 @@
+<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+<style>
+h1 {font-family: 'Pompiere', cursive;}
+body {font-family: 'Cedarville Cursive', cursive;}
+</style>
+<center>
+<h1>Here are your dear ol' favorites:</h1>
+<% @person.parks.each do |park| %>
+<a href= "/park/<%= park.id %>"> <%= park.name %></a></option>
+<% end  %>
+</center>

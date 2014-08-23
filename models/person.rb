@@ -7,5 +7,6 @@ class Person < ActiveRecord::Base
   after_validation :geocode 
 
   attr_accessor :location # :latitude, :longitude,
+  
 
 end

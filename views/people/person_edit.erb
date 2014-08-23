@@ -1,0 +1,14 @@
+<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+<style>
+h1 {font-family: 'Cedarville Cursive', cursive;}
+body {font-family: 'Pompiere', cursive;}
+</style>
+<center>
+<form action="/person/<%= @person.id %>/update" method="post">
+<p>Name: <input type="text" value="<%= @person.name %>" name="name"></p>
+<input type="submit">
+</form>
+<a href="/person/<%= @person.id %>/delete"> Delete Person</a>
+<a href="/">Return to main list.</a>
+</center>

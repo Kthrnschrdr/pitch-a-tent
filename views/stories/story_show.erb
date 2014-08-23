@@ -1,0 +1,11 @@
+<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+<style>
+h1 {font-family: 'Pompiere', cursive;}
+body {font-family: 'Cedarville Cursive', cursive;}
+</style>
+<center>
+<p><%= @story.story %></p>
+<a href="/person/<%= @person.id %>/stories">Return to main list.</a>
+<a href="/person/<%= @person.id %>/story/<%= @story.id %>/edit"> Edit Story</a>
+</center>

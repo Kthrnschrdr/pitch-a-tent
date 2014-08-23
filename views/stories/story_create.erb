@@ -1,0 +1,13 @@
+<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+<style>
+h1 {font-family: 'Pompiere', cursive;}
+body {font-family: 'Cedarville Cursive', cursive;}
+</style>
+<% if @story.valid?%>
+	<p>Sweet!  New story!</p>
+<% else  %>
+<p>You need to write a story!</p>
+<a href="/person/<%= @person.id %>/story/new">Try it again.</a>
+<%end  %>
+<a href="/person/<%= @person.id %>/stories">Return to main list.</a>

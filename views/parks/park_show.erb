@@ -1,0 +1,20 @@
+<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+<style>
+h1 {font-family: 'Pompiere', cursive;}
+body {font-family: 'Cedarville Cursive', cursive;}
+</style>
+<center>
+<h1><%= @park.name %>!</h1>
+<p><%= @park.address %></p>
+<%@stories.each do |story| %>
+  <% if story.person != nil %>
+    <p>Stories about this Park:</p>
+    <p>Authored by </p><%= story.person %>
+    <p><%= story.story %></p>
+  <% end %>
+  <p> No stories yet.  YOU should write one!</p>
+<% end %>
+</center>
+<a href="/parks">Return to main list of parks.</a>
+<a href="/">Go home.</a>

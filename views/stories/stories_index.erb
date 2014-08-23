@@ -1,0 +1,13 @@
+<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+<style>
+h1 {font-family: 'Pompiere', cursive;}
+body {font-family: 'Cedarville Cursive', cursive;}
+</style>
+<h1><a href="/person/<%= @person.id %>/story/new">Add a new story!</a></h1>
+<%@stories.each do |s|  %>
+<h1><a href="/person/<%= @person.id %>/story/<%= s.id %>"><%= s.story %></h1>
+<p><%= s.park.name %></p>	
+<%end%>
+
+

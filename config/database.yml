@@ -1,7 +1,7 @@
 development:
-  database: pitch-a-tent.db
+  database: db/pitch-a-tent.db
   adapter: sqlite3
 
 test:
-  database: pitch-a-tent_test.db
+  database: db/pitch-a-tent_test.db
   adapter: sqlite3

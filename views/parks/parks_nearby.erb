@@ -1,0 +1,17 @@
+<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+<style>
+h1 {font-family: 'Pompiere', cursive;}
+body {font-family: 'Cedarville Cursive', cursive;}
+</style>
+<center>
+<h1> Parks With Tent Camping Within 150 miles: </h1>
+<form action="/park/" method = "get">
+<table>
+<% @parks_nearby.each do |park|%>
+<h1><a href="/park/<%= park.id %>"><%= park.name %></a></h1>
+<p><%= park.address %></p>
+<%end%>
+</form>
+<td><a href="/person/<%= @person.id %>">Go home.</a></td>
+</center>
