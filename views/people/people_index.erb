@@ -9,7 +9,6 @@ body {font-family: 'Pompiere', cursive;}
 <center>
 <h1> Pitch-A-Tent</h1>
 <h2>Hi Friend!</h2>
-
 <%@people.all.each do |person|  %>
 <a href="/person/<%= person.id %>"><%= person.name %></a></option>
 <% end  %>

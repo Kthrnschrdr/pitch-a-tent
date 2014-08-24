@@ -8,19 +8,14 @@ body {font-family: 'Cedarville Cursive', cursive;}
 <h1>Welcome <%= @person.name %>!</h1>
 
 <body>
-<!--CAN'T TOUCH THIS -->
 <h1>Find a park nearby:</h1>
 <form action="/person/<%= @person.id %>/parks_nearby" method="get">
 	<input type="text" name="location">
 	<input type="submit" value="I wanna pitch my tent!">
 </form>
-<!--CAN'T TOUCH THIS -->
 
-<!--CAN'T TOUCH THIS-->
 <h1><a href="/person/<%= @person.id %>/story/new">Add a new story!</a></h1>
-<!--CAN'T TOUCH THIS -->
 
-<!--CAN'T TOUCH THIS -->
 <h1>Record your favorite parks:</h1>
 <form action="/person/<%= @person.id %>/favorite_parks" method="get">
 	<select name="park_id">
@@ -30,13 +25,7 @@ body {font-family: 'Cedarville Cursive', cursive;}
 	</select>
 	<input type="submit" value="Love it!">
 </form>
-<!--CAN'T TOUCH THIS -->
-
-
-<!--CAN'T TOUCH THIS -->
-
-<!--CAN'T TOUCH THIS -->
-</center>
 
 <a href="/person/<%= @person.id %>/edit"> Edit Person</a>
 <a href="/parks">See main list of Nebraska's State Parks and Recreation Areas.</a>
+</center>

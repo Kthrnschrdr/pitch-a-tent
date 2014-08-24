@@ -7,12 +7,12 @@ body {font-family: 'Cedarville Cursive', cursive;}
 <center>
 <h1>Share a story:</h1>
 <form action="/person/<%= @person.id %>/story/create" method="post">
-	<p>Choose the park this story is about:</p>
-	<select name="park_id">
-	<%Park.all.each do |park|  %>
-    <option value="<%= park.id %>"><%= park.name %></option>
-	<% end  %>
-	<textarea name="story" cols="60" rows="20"></textarea>
-	<input type="submit" value="That one time...">	
+<p>Choose the park this story is about:</p>
+<select name="park_id">
+<%Park.all.each do |park|  %>
+<option value="<%= park.id %>"><%= park.name %></option>
+<% end  %>
+<textarea name="story" cols="60" rows="20"></textarea>
+<input type="submit" value="That one time...">	
 </form>
 </center>

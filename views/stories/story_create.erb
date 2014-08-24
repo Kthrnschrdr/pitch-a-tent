@@ -4,6 +4,7 @@
 h1 {font-family: 'Pompiere', cursive;}
 body {font-family: 'Cedarville Cursive', cursive;}
 </style>
+<center>
 <% if @story.valid?%>
 	<p>Sweet!  New story!</p>
 <% else  %>
@@ -12,3 +13,4 @@ body {font-family: 'Cedarville Cursive', cursive;}
 <%end  %>
 <a href="/person/<%= @person.id %>">Go home.</a>
 <a href="/person/<%= @person.id %>/stories">Return to main list.</a>
+</center>

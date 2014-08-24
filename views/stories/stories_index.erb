@@ -4,10 +4,11 @@
 h1 {font-family: 'Pompiere', cursive;}
 body {font-family: 'Cedarville Cursive', cursive;}
 </style>
+<center>
 <h1><a href="/person/<%= @person.id %>/story/new">Add a new story!</a></h1>
 <%@stories.each do |s|  %>
 <h1><a href="/person/<%= @person.id %>/story/<%= s.id %>"><%= s.story %></h1>
 <p><%= s.park.name %></p>	
 <%end%>
-
+</center>
 

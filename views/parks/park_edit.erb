@@ -4,6 +4,7 @@
 h1 {font-family: 'Pompiere', cursive;}
 body {font-family: 'Cedarville Cursive', cursive;}
 </style>
+<center>
 <form action="/park/<%= @park.id %>/update" method="post">
 <p>Name: <input type="text" name="name" value="<%= @park.name %>" ></p>
 <p>Address: <input type="text" name="address" value="<%= @park.address %>" ></p>
@@ -11,3 +12,4 @@ body {font-family: 'Cedarville Cursive', cursive;}
 </form>
 <a href="/park/<%= @park.id %>/delete"> Delete Park</a>
 <a href="/parks">Return to main list.</a>
+</center>
