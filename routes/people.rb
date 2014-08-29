@@ -1,6 +1,7 @@
 
 get "/" do
   @people = Person.all
+  binding.pry
   erb :"people/people_index"
 end
 

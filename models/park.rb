@@ -15,24 +15,24 @@ class Park < ActiveRecord::Base
  #      names << name
  #    end
  binding.pry
-    names = []
     page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
-    x = page.css('span.bodysmall_bold')[0].text
-    y = page.css('span.bodysmall_bold')[1].text
-    z = x + y
-    z.each do |name|
-      names << name
+    x = page.css('span.bodysmall_bold')
+    parks = []
+    x.each do |park|
+      parks << park.text
     end
-
+    parks.delete_if {|text| text == "More information"}
+  
     binding.pry
-    addresses = []
-    page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
-    x = page.css('span.bodysmall')[0].text
-    y = page.css('span.bodysmall')[1].text
-    z = x + y
-    z.each do |address|
-      addresses << address
-    end
+    
+    # addresses = []
+ #    page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
+ #    x = page.css('span.bodysmall')[0].text
+ #    y = page.css('span.bodysmall')[1].text
+ #    z = x + y
+ #    z.each do |address|
+ #      addresses << address
+ #    end
     #
     # park_map = []
     # page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/places/campmaps/campmaps.asp"))
