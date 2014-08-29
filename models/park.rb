@@ -8,13 +8,7 @@ class Park < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude
 
   def self.import_parks
-    # names = []
- #    page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/places/campmaps/campmaps.asp"))
- #    x = page.css('li')[0].text
- #    x.each do |name|
- #      names << name
- #    end
- 
+  
     page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
     x = page.css('span.bodysmall_bold')
     parks = []
@@ -50,20 +44,15 @@ class Park < ActiveRecord::Base
     while parks.length >0
       z << parks.pop(1)
     end
-       #
-    # park_addresses = []
-    # z.each do |p|
-    #   park_addresses << p.join(' ')
-    # end
     
     final_park_addresses = []
     z.each do |p|
-      final_park_addresses << p
+      final_park_addresses << p.join(",")
     end
     
-    binding.pry
-    for n in 0...names.length do
+    for n in 0...final_park_names.length do
       Park.create(name: final_park_names[n], address: final_park_addresses[n])
+      binding.pry
     end
     binding.pry
   end 
