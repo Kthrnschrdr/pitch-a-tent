@@ -62,7 +62,7 @@ end
 
 
 # park_map = []
-# page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/places/campmaps/campmaps.asp"))
+# page = Nokogiri::HTML(open("))
 # x = page.css('ul.bodysmall a').map { |link| link['href'] }
 # x.each do |p|
 #   y = "http://outdoornebraska.ne.gov" + p
