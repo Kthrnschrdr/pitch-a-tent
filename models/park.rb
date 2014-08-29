@@ -21,8 +21,24 @@ class Park < ActiveRecord::Base
     x.each do |park|
       parks << park.text
     end
+    
     parks.delete_if {|text| text == "More information"}
-  
+    z = []
+    while parks.length >0 
+      z << parks.pop(2)
+    end
+    
+    park_names = []
+    z.each do |p|
+      park_names << p.join(' ')
+    end
+    
+    final_park_names = []
+    park_names.each do |p|
+      final_park_names << p.gsub(/\r\n/, '')
+    end
+    
+      
     binding.pry
     
     # addresses = []
