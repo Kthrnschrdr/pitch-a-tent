@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler'
 Bundler.require
+require 'open-uri'
 
 require_relative "./models/park.rb"
 require_relative "./models/person.rb"

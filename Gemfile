@@ -6,6 +6,7 @@ gem "sinatra"
 gem "sinatra-reloader"
 gem "sinatra-activerecord"
 gem "geocoder"
+gem "nokogiri"
 
 group :development, :test do
   gem 'sqlite3'

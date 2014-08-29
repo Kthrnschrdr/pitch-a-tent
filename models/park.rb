@@ -7,20 +7,45 @@ class Park < ActiveRecord::Base
  
   reverse_geocoded_by :latitude, :longitude
 
-  # def self.import_parks
-  #   page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/places/campmaps/campmaps.asp"))
-  #   name_array = page.css('li')[0].text
-  #   name_array.each do |name|
-  #     puts name
-  #   end
-  #
-  #   page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/places/campmaps/campmaps.asp"))
-  #   link_array = page.css('ul.bodysmall a').map { |link| link['href'] }
-  #   link_array.each do |p|
-  #     puts "http://outdoornebraska.ne.gov" + p
-  #   end
-  #
-  #
-  # end
+  def self.import_parks
+    # names = []
+ #    page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/places/campmaps/campmaps.asp"))
+ #    x = page.css('li')[0].text
+ #    x.each do |name|
+ #      names << name
+ #    end
+ binding.pry
+    names = []
+    page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
+    x = page.css('span.bodysmall_bold')[0].text
+    y = page.css('span.bodysmall_bold')[1].text
+    z = x + y
+    z.each do |name|
+      names << name
+    end
+
+    binding.pry
+    addresses = []
+    page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
+    x = page.css('span.bodysmall')[0].text
+    y = page.css('span.bodysmall')[1].text
+    z = x + y
+    z.each do |address|
+      addresses << address
+    end
+    #
+    # park_map = []
+    # page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/places/campmaps/campmaps.asp"))
+    # x = page.css('ul.bodysmall a').map { |link| link['href'] }
+    # x.each do |p|
+    #   y = "http://outdoornebraska.ne.gov" + p
+    #   park_map << y
+    # end
+    binding.pry
+    for n in 0...names.length do
+      Park.create(name: names[n], address: address[n])
+    end
+    binding.pry
+  end 
 
 end
