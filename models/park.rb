@@ -10,45 +10,55 @@ class Park < ActiveRecord::Base
   def self.import_parks
   
     page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
-    x = page.css('span.bodysmall_bold')
-    parks = []
-    x.each do |park|
-      parks << park.text
-    end
+    park_sections = page.css("table[width='570'] tr").each_slice(5)
+    park_sections.each do |p|
+      binding.pry
+    end    
     
-    parks.delete_if {|text| text == "More information"}
-    z = []
-    while parks.length >0 
-      z << parks.pop(2)
-    end
     
-    park_names = []
-    z.each do |p|
-      park_names << p.join(' ')
-    end
     
-    final_park_names = []
-    park_names.each do |p|
-      final_park_names << p.gsub(/\r\n/, '')
-    end
+    
+    
+    
+    # x = page.css('span.bodysmall_bold')
+    # parks = []
+    # x.each do |park|
+    #   parks << park.text
+    # end
+    #
+    # parks.delete_if {|text| text == "More information"}
+    # z = []
+    # while parks.length >0
+    #   z << parks.pop(2)
+    # end
+    #
+    # park_names = []
+    # z.each do |p|
+    #   park_names << p.join(' ')
+    # end
+    #
+    # final_park_names = []
+    # park_names.each do |p|
+    #   final_park_names << p.gsub(/\r\n/, '')
+    # end
     
     page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
-    x = page.css('span.bodysmall')
-    parks = []
-    x.each do |park|
-      parks << park.text
-    end
-    
-    parks.keep_if {|text| text =~ (/[NE]\d\d\d\d\d.\d\d\d\d/)}
-    z = []
-    while parks.length >0
-      z << parks.pop(1)
-    end
-    
-    final_park_addresses = []
-    z.each do |p|
-      final_park_addresses << p.join(",")
-    end
+    # x = page.css('span.bodysmall')
+  #   parks = []
+  #   x.each do |park|
+  #     parks << park.text
+  #   end
+  #
+  #   parks.keep_if {|text| text =~ (/[NE]\d\d\d\d\d.\d\d\d\d/)}
+  #   z = []
+  #   while parks.length >0
+  #     z << parks.pop(1)
+  #   end
+  #
+  #   final_park_addresses = []
+  #   z.each do |p|
+  #     final_park_addresses << p.join(",")
+  #   end
     
     for n in 0...final_park_names.length do
       Park.create(name: final_park_names[n], address: final_park_addresses[n])
