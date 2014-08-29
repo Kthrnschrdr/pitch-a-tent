@@ -45,20 +45,19 @@ class Park < ActiveRecord::Base
       parks << park.text
     end
     
-    parks.delete_if {|text| text =~ (/\(\d\d\d\)\s?\d\d\d-\d\d\d\d/)}
-    parks.delete_if {|text| text =~ (/@/)} 
+    parks.keep_if {|text| text =~ (/[NE]\d\d\d\d\d.\d\d\d\d/)}
     z = []
     while parks.length >0
-      z << parks.pop(2)
+      z << parks.pop(1)
     end
-    
-    park_addresses = []
-    z.each do |p|
-      park_addresses << p.join(' ')
-    end
+       #
+    # park_addresses = []
+    # z.each do |p|
+    #   park_addresses << p.join(' ')
+    # end
     
     final_park_addresses = []
-    park_addresses.each do |p|
+    z.each do |p|
       final_park_addresses << p
     end
     
