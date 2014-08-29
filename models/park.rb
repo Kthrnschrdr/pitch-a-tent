@@ -14,7 +14,7 @@ class Park < ActiveRecord::Base
  #    x.each do |name|
  #      names << name
  #    end
- binding.pry
+ 
     page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
     x = page.css('span.bodysmall_bold')
     parks = []
@@ -38,30 +38,45 @@ class Park < ActiveRecord::Base
       final_park_names << p.gsub(/\r\n/, '')
     end
     
-      
-    binding.pry
+    page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
+    x = page.css('span.bodysmall')
+    parks = []
+    x.each do |park|
+      parks << park.text
+    end
     
-    # addresses = []
- #    page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
- #    x = page.css('span.bodysmall')[0].text
- #    y = page.css('span.bodysmall')[1].text
- #    z = x + y
- #    z.each do |address|
- #      addresses << address
- #    end
-    #
-    # park_map = []
-    # page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/places/campmaps/campmaps.asp"))
-    # x = page.css('ul.bodysmall a').map { |link| link['href'] }
-    # x.each do |p|
-    #   y = "http://outdoornebraska.ne.gov" + p
-    #   park_map << y
-    # end
+    parks.delete_if {|text| text =~ (/\(\d\d\d\)\s?\d\d\d-\d\d\d\d/)}
+    parks.delete_if {|text| text =~ (/@/)} 
+    z = []
+    while parks.length >0
+      z << parks.pop(2)
+    end
+    
+    park_addresses = []
+    z.each do |p|
+      park_addresses << p.join(' ')
+    end
+    
+    final_park_addresses = []
+    park_addresses.each do |p|
+      final_park_addresses << p
+    end
+    
     binding.pry
     for n in 0...names.length do
-      Park.create(name: names[n], address: address[n])
+      Park.create(name: final_park_names[n], address: final_park_addresses[n])
     end
     binding.pry
   end 
 
 end
+
+
+
+# park_map = []
+# page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/places/campmaps/campmaps.asp"))
+# x = page.css('ul.bodysmall a').map { |link| link['href'] }
+# x.each do |p|
+#   y = "http://outdoornebraska.ne.gov" + p
+#   park_map << y
+# end
