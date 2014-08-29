@@ -12,6 +12,15 @@ class Park < ActiveRecord::Base
     page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
     park_sections = page.css("table[width='570'] tr").each_slice(5)
     park_sections.each do |p|
+      first_name = p[0].css('span.bodysmall_bold').text
+      last_name = p[1].css('span.bodysmall_bold').text
+      street_address = p[0].css('span.bodysmall').text
+      city = p[1].css('span.bodysmall').text
+      
+      last_name.gsub!(/\r\n/, '')
+      binding.pry
+    
+      Park.create(name: "#{first_name} #{last_name}", address: "#{street_address} #{city}")
       binding.pry
     end    
     
@@ -42,7 +51,7 @@ class Park < ActiveRecord::Base
     #   final_park_names << p.gsub(/\r\n/, '')
     # end
     
-    page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
+    # page = Nokogiri::HTML(open("http://outdoornebraska.ne.gov/parks/guides/contact.asp"))
     # x = page.css('span.bodysmall')
   #   parks = []
   #   x.each do |park|
