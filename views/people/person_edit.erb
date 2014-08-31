@@ -1,8 +1,7 @@
 <body>
 <form action="/person/<%= @person.id %>/update" method="post">
-<p>Name: <input type="text" value="<%= @person.name %>" name="name"></p>
+<h1>Name: <input type="text" value="<%= @person.name %>" name="name"></h1>
 <input type="submit">
 </form>
 <a href="/person/<%= @person.id %>/delete"> Delete Person</a>
-<a href="/">Return to main list.</a>
 </body>

@@ -25,12 +25,15 @@ header #bar {
 	clear: both;
 }
 
+#clearfix {
+	clear: both;
+}
+
 body {
 	text-align: center;
 	font-family: 'Pompiere', cursive;
-	background-image: url('www.wildwarehouse.com/card-and-paper/free-downloads/latest-additions/yellow-gingham-background-paper.html');
-	background-size: xx-large;
-	font-size: large;
+	background-image: url('http://requiempalace.rubberslug.com/gallery/inv_info.asp?ItemID=172440');
+	font-size: xx-large;
 }
 
 body h1 {

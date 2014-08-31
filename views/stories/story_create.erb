@@ -1,10 +1,9 @@
 <body>
 <% if @story.valid?%>
-	<p>Sweet!  New story!</p>
+	<h1>Sweet!  New story!</h1>
 <% else  %>
-<p>You need to write a story!</p>
+<h1>You need to write a story!</h1>
 <a href="/person/<%= @person.id %>/story/new">Try it again.</a>
 <%end  %>
-<a href="/person/<%= @person.id %>">Go home.</a>
-<a href="/person/<%= @person.id %>/stories">Return to main list.</a>
+<a href="/person/<%= @person.id %>/stories">Return to your story page.</a>
 </body>

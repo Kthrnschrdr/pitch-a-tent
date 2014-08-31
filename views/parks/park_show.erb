@@ -1,5 +1,5 @@
 <body>
-<h1><%= @park.name %>!</h1>
+<h1><%= @park.name %></h1>
 <p><%= @park.address %></p>
 <%@stories.each do |story| %>
   <% if story.person != nil %>
@@ -9,6 +9,4 @@
   <% end %>
   <p> No stories yet.  YOU should write one!</p>
 <% end %>
-<a href="/parks">Return to main list of parks.</a>
-<a href="/">Go home.</a>
 </body>

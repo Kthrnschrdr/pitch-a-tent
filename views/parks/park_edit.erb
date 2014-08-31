@@ -1,9 +1,8 @@
 <body>
 <form action="/park/<%= @park.id %>/update" method="post">
-<p>Name: <input type="text" name="name" value="<%= @park.name %>" ></p>
-<p>Address: <input type="text" name="address" value="<%= @park.address %>" ></p>
+<h1>Name: <input type="text" name="name" value="<%= @park.name %>" ></h1>
+<h1>Address: <input type="text" name="address" value="<%= @park.address %>" ></h1>
 <input type="submit">
 </form>
 <a href="/park/<%= @park.id %>/delete"> Delete Park</a>
-<a href="/parks">Return to main list.</a>
 </body>
