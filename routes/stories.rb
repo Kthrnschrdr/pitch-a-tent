@@ -1,5 +1,3 @@
-##########
-
 get "/person/:id/stories" do
   @person = Person.find(params[:id])
   @stories = @person.stories

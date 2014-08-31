@@ -1,4 +1,3 @@
-########
 get "/parks" do
   @parks = Park.all
   erb :"parks/parks_index"
@@ -38,7 +37,7 @@ end
 get "/person/:id/parks_nearby" do
   @person = Person.find(params[:id])
   @person.location = (params["location"])
-  @parks_nearby = Park.near(@person.location, 150)
+  @parks_nearby = Park.near(@person.location, 100)
   erb :"parks/parks_nearby"
 end
 
