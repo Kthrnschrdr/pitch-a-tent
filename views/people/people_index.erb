@@ -1,12 +1,11 @@
-<center>
-<h1> Pitch-A-Tent</h1>
-<h2>Hi Friend!</h2>
+<body>
+<h1>Hi Friend!</h1>
 <%@people.all.each do |person|  %>
 <a href="/person/<%= person.id %>"><%= person.name %></a></option>
 <% end  %>
-
 <a href="/person/new">OR, introduce yourself!</a> 
-</center>
+</body>
+
 
 
 

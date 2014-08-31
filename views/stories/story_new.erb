@@ -1,10 +1,4 @@
-<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
-<style>
-h1 {font-family: 'Pompiere', cursive;}
-body {font-family: 'Cedarville Cursive', cursive;}
-</style>
-<center>
+<body>
 <h1>Share a story:</h1>
 <form action="/person/<%= @person.id %>/story/create" method="post">
 <p>Choose the park this story is about:</p>
@@ -15,4 +9,4 @@ body {font-family: 'Cedarville Cursive', cursive;}
 <textarea name="story" cols="60" rows="20"></textarea>
 <input type="submit" value="That one time...">	
 </form>
-</center>
+</body>
