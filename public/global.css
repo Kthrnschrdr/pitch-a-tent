@@ -3,26 +3,33 @@
 <style>
 
 header {	
-	position: fixed;
-	width: 100%;
-	height: 100px;
-	top: 0;
-	background-image: url('http://i.imgur.com/1kujPqk.jpg')
+	/*height: 150px;*/
+	width: 1000px;
+	/*background-image:"/images/title5.png";*/
 }
 
-header #logo {
+header .logo {
+	background-image:"/images/title5.png";
+	width: 80%;
 	float: left;
+	text-size: medium;
+	margin-left: -150px;
 }
 
 header #bar {
+	width: 20%;
 	float: right;
+	margin-right: -150px;
 }
 
 #bar li {
 	text-transform: uppercase;
-	padding: 30px;
+	padding: 20px;
 	display: inline-block;
-	clear: both;
+	font-family: 'Pompiere', cursive;
+	font-size: large;
+	color: ##FFF;
+	
 }
 
 #clearfix {
@@ -32,12 +39,22 @@ header #bar {
 body {
 	text-align: center;
 	font-family: 'Pompiere', cursive;
-	background-image: url('http://requiempalace.rubberslug.com/gallery/inv_info.asp?ItemID=172440');
-	font-size: xx-large;
+	font-size: x-large;
+	color: #35200A;
+	width: 900px;
+	margin: 0 auto;
+	float: center;
+	/*background: #FEFFE7;*/
+    font-size: x-large;
+	color: #35200A;
+	background-image:url('http://brochier.it/images/fabrics/j2594-005-z.jpg');
 }
 
 body h1 {
 	font-family: 'Cedarville Cursive', cursive;
-    font-size: xx-large;
+}
+
+body p {
+	font-family: 'Pompiere', cursive;
 }
 </style>
