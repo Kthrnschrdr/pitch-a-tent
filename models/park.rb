@@ -17,10 +17,11 @@ class Park < ActiveRecord::Base
       last_name = p[1].css('span.bodysmall_bold').text
       street_address = p[0].css('span.bodysmall').text
       city = p[1].css('span.bodysmall').text
+      webaddress = p[3].css('a.bodysmall_bold').text
       
       last_name.gsub!(/\r\n/, '')
     
-      Park.create(name: "#{first_name} #{last_name}", address: "#{street_address} #{city}")
+      Park.create(name: "#{first_name} #{last_name}", address: "#{street_address} #{city}", webaddress: "http://outdoornebraska.ne.gov/ + #{webaddress}")
       
     end
   end    

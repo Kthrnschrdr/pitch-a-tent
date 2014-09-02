@@ -8,6 +8,7 @@ body{
 <body>
 <h1><%= @park.name %></h1>
 <p><%= @park.address %></p>
+<p><%= @park.webaddress %></p>
 <%@stories.each do |story| %>
   <% if story.person != nil %>
     <p>Stories about this Park:</p>
