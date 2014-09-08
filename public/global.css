@@ -1,19 +1,18 @@
-<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
-<style>
-
-header {	
-	/*height: 150px;*/
-	width: 1000px;
-	/*background-image:"/images/title5.png";*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-header .logo {
-	background-image:"/images/title5.png";
-	width: 80%;
+<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+
+
+header #logo {
+	padding-left: 40px;
+	padding-top: 100px;
 	float: left;
-	text-size: medium;
-	margin-left: -150px;
 }
 
 header #bar {
@@ -43,10 +42,6 @@ body {
 	color: #35200A;
 	width: 900px;
 	margin: 0 auto;
-	float: center;
-	/*background: #FEFFE7;*/
-    font-size: x-large;
-	color: #35200A;
 	background-image:url('http://brochier.it/images/fabrics/j2594-005-z.jpg');
 }
 
@@ -57,4 +52,26 @@ body h1 {
 body p {
 	font-family: 'Pompiere', cursive;
 }
-</style>
+
+#tabbed_interface ul{
+  margin: 0;
+  padding: 0;
+}
+#tabbed_interface li{
+  display: inline-block;
+  padding: 30px;
+  font-size: xx-large;
+  background-color: #D64A00;
+  color: #ffffff;
+  margin-right: 20px;
+  cursor: pointer;  
+}
+#tabbed_interface li.active{
+  color: #FAD1B8;
+}
+
+#tab_content{
+  border: 5px solid #D64A00;
+  padding: 10px;
+}
+
