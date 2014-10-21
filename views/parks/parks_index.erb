@@ -1,18 +1,21 @@
 
 <style>
 body {
-	background-image:url('http://brochier.it/images/fabrics/j2594-005-z.jpg');
+	background-image:'images/800x518_Seamless_Plaid_Patterns_Preview2.jpeg';
 	width: 100%;
 	margin: 0 auto;
+}
+
+h1 {
+  font-family: Pompiere, cursive;
 }
 </style>
 
 <!-- <p><a href="/park/new">Add a new park!</a></p> -->
 <body>
-<h1>Nebraska's State Parks and State Recreation Areas in Which You May Pitch!</h2>
-	<h2> (your tent, that is)!</h2>
+<h1>Nebraska State Parks and SRAs</h1>
 <%@parks.each do |p|  %>
-<h1><a href="/park/<%= p.id %>"><%= p.name %></a></h1>
+<h2><a href="/park/<%= p.id %>"><%= p.name %></a></h2>
 <p><%= p.address %></p>
 <%end%>
 </body>

@@ -23,8 +23,8 @@ body{
 	  <div id="find">	
 		  <h1>Find a park nearby:</h1>
 		  <form action="/person/<%= @person.id %>/parks_nearby" method="get">
-			  <input type="text" name="location">
-			  <input type="submit" value="I wanna pitch my tent!">
+			  <input type="text" name="location" class="text_field">
+			  <input type="submit" value="I wanna pitch my tent!" class="submit">
 		  </form>
   	  </div>
   
@@ -40,7 +40,7 @@ body{
     		  <option value="<%= park.id %>"><%= park.name %></option>
    			  <% end  %>
 		     </select>
-	 	  <input type="submit" value="Love it!">
+	 	  <input type="submit" value="Love it!" class="submit">
          </form>
       </div>
   </div>  
